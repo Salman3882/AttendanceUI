@@ -1,0 +1,107 @@
+
+
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="./styles/report.css">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="stylesheet" href="styles/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <div class="nav">
+        <div class="nav-logo">
+            <img src="./images/nav-logo.png" alt="">
+        </div>
+        <div class="button-div">
+            <a href="./userLogin.html">Log out</a>
+        </div>
+    </div>
+
+    <div id="wrapper">
+
+        <aside id="sidebar-wrapper">
+            <div class="sidebar-brand">
+                <h2>Logo</h2>
+            </div>
+            <ul class="sidebar-nav">
+                <li class="" id="home">
+                    <a href="./user.html"><i class="fa fa-home"></i>Home</a>
+                </li>
+                <li class="active">
+                    <a href="./Leave.html"><i class="fa-solid fa-book"></i>Request Leave</a>
+                </li>
+                <li class="listItem">
+                    <a href="./attendance.html" class="active"><i class="fa fa-user"></i>User Attendance</a>
+                </li>
+            </ul>
+        </aside>
+
+        <div id="navbar-wrapper">
+            <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a href="#" class="navbar-brand" id="sidebar-toggle"><i class="fa fa-bars"></i></a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+
+    </div>
+
+    <section class="section" id="report">
+        <div class="report">
+            <h1 class="report-head">Leave Application</h1>
+        </div>
+        <div class="main-info">
+            <div class="user">
+                <label for="id">Id:</label>
+                <input type="number" id="id">
+                <label for="name">Name:</label>
+                <input type="text" name="name" id="name">
+            </div>
+       
+        </div>
+        <textarea name="message" placeholder="Write your leave application" rows="8"></textarea>
+        <button class="btn" onclick="buttonClicked()">Submit</button>
+    </section>
+    
+
+
+
+
+
+
+
+
+
+
+    <script>
+        const $button = document.querySelector('#sidebar-toggle');
+        const $wrapper = document.querySelector('#wrapper');
+
+        $button.addEventListener('click', (e) => {
+            e.preventDefault();
+            $wrapper.classList.toggle('toggled');
+        });
+
+
+        function buttonClicked() {
+            alert("Application sent successfully")
+        }
+
+
+
+    </script>
+</body>
+
+</html>

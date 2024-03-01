@@ -1,0 +1,88 @@
+:root{
+    --main-color: #3275DB;
+    --background-color:#f2f2f2
+    
+}
+.section{
+    width: 80%;
+    margin: 0px auto;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    z-index:0;
+}
+.report-head{
+    text-align: center;   
+    color: var(--main-color);
+    font-weight: bold;
+    font-size: 2.5em;
+}
+.main-info{
+    margin-top: 15px;
+    position: relative;
+    display: flex;
+    width: 60%;
+}
+.user , .dates{
+    width: 100%;
+    margin: 0 5px;
+
+}
+label{
+    margin-top:5px;
+    font-size: 1.2rem;
+    color: var(--main-color);
+    font-weight: bold;
+}
+input{
+    width: 100%;
+    height: 30px;
+    margin: 10px 0;
+    font-size: 1.1rem;
+    padding: 3px;
+    border: 1px solid rgba(0, 0, 0, 0.432);
+    border-radius: 5px;
+}
+textarea{
+    padding: 8px;
+    font-size: 1.1rem;
+    resize: none;
+    width: 60%;
+    border: 1px solid rgba(0, 0, 0, 0.432);
+    border-radius: 5px;
+}
+input:focus, textarea:focus{
+    border: 2px solid #3275DB;
+}
+.btn{
+    margin-top: 10px;
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: var(--main-color);
+    border: 0;
+    padding: 8px 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+    opacity: 0.9;
+}
+.btn:hover{
+    opacity: 1;
+}
+
+@media screen and (max-width: 600px) {
+.report-head{
+    font-size: 1.4rem;
+}
+.main-info{
+    flex-direction: column;
+    margin: 5px 0;
+    width: 100%;
+}
+textarea{
+width: 100%;
+}

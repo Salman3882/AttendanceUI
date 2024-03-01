@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 80%;
+      max-width: 600px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      overflow: hidden;
+      margin: 0 auto;
+    }
+
+    th, td {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 12px;
+    }
+
+    th {
+      background-color: #f0f0f0;
+    }
+
+    button {
+      cursor: pointer;
+      padding: 8px;
+      margin: 4px;
+      border: none;
+      border-radius: 4px;
+      font-size: 14px;
+      outline: none;
+    }
+
+    button.marked {
+      background-color: #4caf50;
+      color: #fff;
+    }
+
+    button.disabled {
+      background-color: #ddd;
+      cursor: not-allowed;
+    }
+
+    button:hover {
+      opacity: 0.8;
+    }
+  </style>
+  <title>User Attendance System</title>
+</head>
+<body>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr id="user1">
+      <td>John Doe</td>
+      <td>
+        <button onclick="markAttendance('user1')">Mark Attendance</button>
+        <button onclick="markLeave('user1')">Mark Leave</button>
+        <button onclick="viewAttendance('user1')">View Attendance</button>
+      </td>
+    </tr>
+    <!-- Add more rows for other users as needed -->
+  </tbody>
+</table>
+
+<script>
+  // Object to store user attendance data
+  const userAttendanceData = {};
+
+  function markAttendance(userId) {
+    const user = userAttendanceData[userId];
+    if (!user) {
+      userAttendanceData[userId] = { attendance: true, leave: false };
+      updateButtonState(userId);
+      alert("Attendance marked successfully!");
+    } else {
+      alert("Attendance already marked for today!");
+    }
+  }
+
+  function markLeave(userId) {
+    const user = userAttendanceData[userId];
+    if (!user || !user.leave) {
+      const confirmation = confirm("Are you sure you want to mark leave?");
+      if (confirmation) {
+        userAttendanceData[userId] = { attendance: false, leave: true };
+        updateButtonState(userId);
+        alert("Leave marked successfully!");
+      }
+    } else {
+      alert("Leave already marked! Cannot change.");
+    }
+  }
+
+  function viewAttendance(userId) {
+    const user = userAttendanceData[userId];
+    if (user) {
+      alert(`Attendance: ${user.attendance ? 'Present' : 'Absent'}\nLeave: ${user.leave ? 'Marked' : 'Not Marked'}`);
+    } else {
+      alert("No data available for this user.");
+    }
+  }
+
+  function updateButtonState(userId) {
+    const user = userAttendanceData[userId];
+    const buttons = document.querySelectorAll(`#${userId} button`);
+
+    if (user) {
+      if (user.attendance) {
+        buttons[0].classList.add('marked');
+        buttons[0].classList.add('disabled');
+        buttons[0].disabled = true;
+      }
+
+      if (user.leave) {
+        buttons[1].classList.add('marked');
+        buttons[1].classList.add('disabled');
+        buttons[1].disabled = true;
+      }
+    }
+  }
+</script>
+
+</body>
+</html>

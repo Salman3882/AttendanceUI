@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="stylesheet" href="styles/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+    
+    <body>
+    
+        <div class="card-container">
+            <div class="card">
+                    <img src="./images/profile.png" alt="">
+                <div class="content">
+                    <p><b>user id:</b> 01</p>
+                    <p><b>Name:</b> username</p>
+                    <p><b>Email:</b> email@gmail.com</p>
+                    <p><b>Mobile No:</b> 031546563</p>
+                    <p><b>CNIC:</b> 15402 3216 589 6</p>
+                    <p><b>Date of birth:</b> 20/04/2005</p>       
+                    <p><b>Joining date:</b> 10/06/2021</p>       
+                    <p><b>Degree:</b> Computer Science</p>       
+                </div>
+                <button class="btn close" id="close">Close</button>
+            </div>
+          </div>
+    <div class="nav">
+        <div class="nav-logo">
+            <img src="./images/nav-logo.png" alt="">
+        </div>
+        <div>
+            <h1 class="nav-head">Admin Panel</h1>
+        </div>
+        <div class="button-div">
+            <a href="./index.html">Log out</a>
+        </div>
+    </div>
+
+    <div id="wrapper">
+
+        <aside id="sidebar-wrapper">
+            <div class="sidebar-brand">
+                <h2>Logo</h2>
+            </div>
+            <ul class="sidebar-nav">
+                <li class="active" id="home">
+                    <a href="#"><i class="fa fa-home"></i>Home</a>
+                </li>
+                <li class="makeReport">
+                    <a href="./report.html"><i class="fa-solid fa-book"></i>Make report</a>
+                </li>
+                <li class="listItem">
+                    <a href="./grades.html"><i class="fa fa-user"></i>User grades</a>
+                </li>
+            </ul>
+        </aside>
+
+        <div id="navbar-wrapper">
+            <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a href="#" class="navbar-brand" id="sidebar-toggle"><i class="fa fa-bars"></i></a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+
+    </div>
+    <table class="usersTable">
+        <caption>Users</caption>
+        <thead>
+            <tr>
+                <th scope="col">id</th>
+                <th scope="col">Name</th>
+                <th scope="col">email</th>
+                <th scope="col">Actions</th>
+                <th scope="col">profile</th>
+            </tr>
+        </thead>
+        <tbody>
+ 
+           <tr class="user">
+                <td data-label="id">01</td>
+                <td data-label="Name">user</td>
+                <td data-label="Email">user3437@gmail.com</td>
+                <td data-label="Actions">
+                    <button class="btn edit">Edit</button>
+                    <button class="btn delete"><i class="fa-solid fa-trash-can"></i></button>
+
+                </td>
+                <td data-label="profile">
+                    <button class="btn view" id="view">view</button>
+                </td>
+            </tr>
+           <tr class="user">
+                <td data-label="id">02</td>
+                <td data-label="Name">user</td>
+                <td data-label="Email">user3437@gmail.com</td>
+                <td data-label="Actions">
+                    <button class="btn edit">Edit</button>
+                    <button class="btn delete"><i class="fa-solid fa-trash-can"></i></button>
+
+                </td>
+                <td data-label="profile">
+                    <button class="btn view" id="view">view</button>
+                </td>
+            </tr>
+           <tr class="user">
+                <td data-label="id">03</td>
+                <td data-label="Name">user</td>
+                <td data-label="Email">user3437@gmail.com</td>
+                <td data-label="Actions">
+                    <button class="btn edit">Edit</button>
+                    <button class="btn delete"><i class="fa-solid fa-trash-can"></i></button>
+
+                </td>
+                <td data-label="profile">
+                    <button class="btn view" id="view">view</button>
+                </td>
+            </tr>
+           <tr class="user">
+                <td data-label="id">04</td>
+                <td data-label="Name">user</td>
+                <td data-label="Email">user3437@gmail.com</td>
+                <td data-label="Actions">
+                    <button class="btn edit">Edit</button>
+                    <button class="btn delete"><i class="fa-solid fa-trash-can"></i></button>
+
+                </td>
+                <td data-label="profile">
+                    <button class="btn view" id="view">view</button>
+                </td>
+            </tr>
+           <tr class="user">
+                <td data-label="id">05</td>
+                <td data-label="Name">user</td>
+                <td data-label="Email">user3437@gmail.com</td>
+                <td data-label="Actions">
+                    <button class="btn edit">Edit</button>
+                    <button class="btn delete"><i class="fa-solid fa-trash-can"></i></button>
+
+                </td>
+                <td data-label="profile">
+                    <button class="btn view" id="view">view</button>
+                </td>
+            </tr>
+ 
+
+        </tbody>
+    </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        const $button = document.querySelector('#sidebar-toggle');
+        const $wrapper = document.querySelector('#wrapper');
+
+        $button.addEventListener('click', (e) => {
+            e.preventDefault();
+            $wrapper.classList.toggle('toggled');
+        });
+
+    
+        //delete user
+
+        const users = document.querySelectorAll(".user")
+        const deleteBtn = document.querySelectorAll(".delete")
+        deleteBtn.forEach((button) => {
+        button.addEventListener('click', function() {
+            const row = this.parentNode.parentNode;
+            row.parentNode.removeChild(row);
+        })})
+    
+        
+
+    // Card 
+const card = document.querySelector(".card-container")
+const viewBtns = document.querySelectorAll("#view")
+const closeBtn = document.querySelector("#close")
+
+viewBtns.forEach(viewBtn => {
+    viewBtn.addEventListener("click", (e) => {
+        e.preventDefault()
+        card.style.display = "block"
+    })
+})
+
+closeBtn.addEventListener("click", (e) => {
+    e.preventDefault()
+    card.style.display = "none"
+})
+
+    </script>
+</body>
+
+</html>

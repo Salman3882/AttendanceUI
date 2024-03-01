@@ -1,0 +1,63 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+.attendanceTable {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
+}
+
+.attendanceTable caption {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.attendanceTable thead {
+    background-color: #3275DB;
+    color: #fff;
+}
+
+.attendanceTable th, .attendanceTable td {
+    padding: 12px;
+    text-align: left;
+}
+
+.attendanceTable tbody tr {
+    border-bottom: 1px solid #ddd;
+}
+
+.attendanceTable tbody tr:last-child {
+    border-bottom: none;
+}
+
+.attendanceTable .attendance-checkbox {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 20px;
+    height: 20px;
+    color: #3275DB; /* Main color for checkboxes */
+    font-weight: bold; /* Increased font weight */
+}
+
+@media (max-width: 600px) {
+    .attendanceTable {
+        width: 100%;
+    }
+
+    .attendanceTable th, .attendanceTable td {
+        font-size: 0.9em;
+        padding: 8px;
+    }
+}
